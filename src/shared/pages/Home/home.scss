@@ -1,0 +1,61 @@
+// COLORS
+$dark: #20232a;
+$blue: #61dafb;
+$size: 80vmin;
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  // background-color: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#react-logo {
+  width: 40vmin;
+  height: 40vmin;
+  position: relative;
+  animation: spin 10s linear infinite;
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $blue;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    top: calc(50% - 2.5vmin);
+    left: calc(50% - 2.5vmin);
+  }
+  
+  .c {
+    position: absolute;
+    width: 100%;
+    height: 34%;
+    border: 1.75vmin solid $blue;
+    top: 33%;
+    border-radius: 49%;
+    
+    &.c2 {
+      transform: rotate(60deg);
+    }
+    
+    &.c3 {
+      transform: rotate(120deg);
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

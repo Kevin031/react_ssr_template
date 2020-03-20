@@ -1,0 +1,37 @@
+const merge = require('webpack-merge')
+const common = require('./common')
+const { join } = require('path')
+const CopyPlugin = require('copy-webpack-plugin')
+
+const extendedNodeExternals = require('../scripts/extended-node-externals')
+
+module.exports = merge(common, {
+  mode: 'production',
+  target: 'node',
+  externals: extendedNodeExternals,
+  stats: 'minimal',
+  node: {
+    __dirname: false,
+    __filename: false
+  },
+  entry: ['@babel/polyfill', join(__dirname, '../src/index')],
+  output: {
+    filename: 'index.js',
+    path: join(__dirname, '../public')
+  },
+  plugins: [
+    new CopyPlugin([
+      {
+        from: join(__dirname, '../package.json'),
+        to: join(__dirname, '../public/package.json')
+      }
+    ]),
+    new CopyPlugin([
+      {
+        context: join(__dirname, '../devel-public/assets'),
+        from: '**/*',
+        to: join(__dirname, '../public/assets')
+      }
+    ])
+  ]
+})

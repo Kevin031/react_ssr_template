@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+      "module": "ES2015",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "lib": ["ES6", "DOM"],
+      "noImplicitAny": false,
+      "removeComments": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "preserveConstEnums": true,
+      "jsx": "react",
+      "baseUrl": ".",
+      "target": "es2015",
+      "allowJs": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "noEmitOnError": true,
+      "noErrorTruncation": true,
+      "paths": {
+        "@/*": ["src/shared/*"]
+      }
+  },
+  "include": [
+    "src/shared/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
