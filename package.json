@@ -46,7 +46,7 @@
     "@types/react-dom": "^16.9.4",
     "axios": "^0.18.0",
     "classnames": "^2.0",
-    "express": "^4.16.0",
+    "express": "^4.17.3",
     "griffith": "^1.4.0",
     "hashids": "^1.2.2",
     "helmet": "^3.13.0",
